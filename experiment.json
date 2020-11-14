@@ -14,7 +14,7 @@
             "name": "Basics of Scanning Electron Microscopy: Secondary Electron and BSE imaging mode",
             "short-name": "sem-basics",
             "repo": "https://github.com/virtual-labs/exp-beam-voltage-ph3-iitk",
-            "branch": "master",
+            "branch": "dev",
             "tag": "v1.0.0",
             "deploy": true
                 }
