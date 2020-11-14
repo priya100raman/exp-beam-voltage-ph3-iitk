@@ -1,0 +1,29 @@
+name: Host_Staging
+on:
+  push:
+    branches: 
+      - staging
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: |
+        git clone -b pipeline https://github.com/virtual-labs/Phase-3-Lab-Template
+        cd Phase-3-Lab-Template/ph3-beta-to-ui3.0-conv
+        mv ../../experiment.json ./experiment-list.json
+        make host-experiments
+        rm -rf ../../build/round-template/.git
+        cd ../../
+        git config --local user.email "admin@vlabs.ac.in"
+        git config --local user.name "Vlabs"
+        git checkout --orphan gh-pages
+        git reset
+        git add build/* -f
+        git mv build/* ./ -f
+        git commit -m "hosted staging branch"
+    - uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.ORG_OWNER_GITHUB_TOKEN }}
+        force: true
+        branch: gh-pages
