@@ -21,7 +21,7 @@ jobs:
         git reset
         git add build/* -f
         git mv build/* ./ -f
-        git commit -m "hosted staging branch"
+        git commit -m "hosted staging branch. Please review at https://virtual-labs.github.io/exp-beam-voltage-ph3-iitk/"
     - uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.ORG_OWNER_GITHUB_TOKEN }}
