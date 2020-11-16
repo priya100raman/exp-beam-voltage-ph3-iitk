@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-        git clone -b pipeline https://github.com/virtual-labs/Phase-3-Lab-Template
+        git clone -b pipeline https://githubsss.com/virtual-labs/Phase-3-Lab-Template
         cd Phase-3-Lab-Template/ph3-beta-to-ui3.0-conv
         mv ../../experiment.json ./experiment-list.json
         make host-experiments
